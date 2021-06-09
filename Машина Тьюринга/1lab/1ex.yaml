@@ -1,0 +1,5 @@
+name: binary increment
+source code: "# 11q01101\r\ninput: '1101101'\r\nblank: ' '\r\nstart state: q1\r\ntable:\r\n  q1:\r\n    1: {write: 0, R: q1}\r\n    0: {write: 1, R: q1}\r\n    h: {write: 1, R: done}\r\n  done:\r\n  \r\n"
+positions:
+  q1: {x: 478.66, y: 312.03, fixed: false}
+  done: {x: 612.7, y: 417.74}

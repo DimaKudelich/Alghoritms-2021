@@ -1,0 +1,15 @@
+name: binary increment
+source code: "#01234;\r\ninput: '12032423'\r\nblank: ' '\r\nstart state: q0\r\ntable:\r\n  q0:\r\n    [0,1,2,3,4]: {R: q0}\r\n    ' ': {L: q1}\r\n  q1:\r\n    0: {write: '#', R: qd0}\r\n    1: {write: '#', R: qd1}\r\n    2: {write: '#', R: qd2}\r\n    3: {write: '#', R: qd3}\r\n    4: {write: '#', R: qd4}\r\n  q2:\r\n    [0,1,2,3,4]: {L: q2}\r\n    '#': {L: q3}\r\n  q3:\r\n    '#': {L: q3}\r\n    [0,1,2,3,4]: {R: q4}\r\n    ' ': {R: q5}\r\n  q4:\r\n    '#': {L: q1}\r\n  qd0:\r\n    [0,1,2,3,4,'#']: {R: qd0}\r\n    ' ': {write: 0, L: q2}\r\n  qd1:\r\n    [0,1,2,3,4,'#']: {R: qd1}\r\n    ' ': {write: 1, L: q2}\r\n  qd2:\r\n    [0,1,2,3,4,'#']: {R: qd2}\r\n    ' ': {write: 2, L: q2}\r\n  qd3:\r\n    [0,1,2,3,4,'#']: {R: qd3}\r\n    ' ': {write: 3, L: q2}\r\n  qd4:\r\n    [0,1,2,3,4,'#']: {R: qd4}\r\n    ' ': {write: 4, L: q2}\r\n  q5: \r\n    [0,1,2,3,4]: {R: q5}\r\n    '#': {write: ' ', R: q5}\r\n    ' ': {L: done}\r\n  done:\r\n  \r\n  \r\n"
+positions:
+  q0: {x: 166.26, y: 221.6}
+  q1: {x: 255.07, y: 230.43}
+  q2: {x: 358.68, y: 244.92, fixed: false}
+  q3: {x: 508.88, y: 267.1, fixed: false}
+  q4: {x: 400.98, y: 175.1, fixed: false}
+  qd0: {x: 290.84, y: 99.68, fixed: false}
+  qd1: {x: 298.65, y: 375.74, fixed: false}
+  qd2: {x: 243.47, y: 360.66, fixed: false}
+  qd3: {x: 352.36, y: 103.72, fixed: false}
+  qd4: {x: 361.73, y: 376.23}
+  q5: {x: 601.44, y: 379.06, fixed: false}
+  done: {x: 665.96, y: 248.78}

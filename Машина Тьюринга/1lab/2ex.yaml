@@ -1,0 +1,13 @@
+name: binary increment
+source code: "# ) 11011qh01h01;\r\ninput: '11011h01h01'\r\nblank: ' '\r\nstart state: q01\r\ntable:\r\n  q01: \r\n    [0,1,h]: {R: q02}\r\n  q02: \r\n    [0,1,h]: {R: q03}\r\n  q03: \r\n    [0,1,h]: {R: q04}\r\n  q04: \r\n    [0,1,h]: {R: q05}\r\n  q05: \r\n    [0,1,h]: {R: q1}\r\n  q1:\r\n    1: {write: h, R: q1}\r\n    0: {write: 1, R: q1}\r\n    h: {write: h, R: q2}\r\n    ' ': {R: done}\r\n  q2:\r\n    1: {write: 0, R: q3}\r\n    0: {write: 1, R: q3}\r\n    h: {write: h, R: q3}\r\n    ' ': {R: done}\r\n  q3:\r\n    1: {write: h, R: q4}\r\n    0: {write: 1, R: q4}\r\n    h: {write: h, R: q4}\r\n    ' ': {R: done}\r\n  q4:\r\n    1: {write: 1, L: q4}\r\n    0: {write: 0, L: q1}\r\n    h: {write: h, R: done}\r\n    ' ': {R: done}\r\n  done:\r\n  \r\n"
+positions:
+  q01: {x: 605.8, y: 161.69, fixed: false}
+  q02: {x: 608.85, y: 305.77, fixed: false}
+  q03: {x: 522.71, y: 422.93, fixed: false}
+  q04: {x: 380.44, y: 453.28, fixed: false}
+  q05: {x: 236.95, y: 436.38}
+  q1: {x: 236.13, y: 303.31}
+  q2: {x: 239.33, y: 99.37}
+  q3: {x: 459.06, y: 100.52}
+  q4: {x: 456.3, y: 304.78}
+  done: {x: 348.24, y: 196.44}
